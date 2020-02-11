@@ -57,7 +57,9 @@ uporabljene = font1.render("Uporabljene črke:", True, blue)
 preostalo = font1.render("Preostalih preizkusov: ", True, red)
 naslov = font3.render("Vislice", True, black)
 
-gesla = ["računalnik", "modem", "cpu", "strežnik"]
+gesla = ["računalnik", "modem", "internet", "strežnik",
+         "monitor", "hdmi", "tipkovnica", "miška", "brskalnik"]
+
 geslo = random.choice(gesla)
 bes_uporabljene = []
 runda = []
@@ -128,8 +130,8 @@ class MainWINDOW:
         self.main()
 
     def koncaj(self):
-        url = 'http://eucilnica.sc-celje.si/escaperoom'
-        webbrowser.get('windows-default').open(url)
+        url = 'index.html'
+        webbrowser.get('windows-default').open(url, 2)
         pygame.quit()
         quit()
 
@@ -225,6 +227,341 @@ class MainWINDOW:
             if narobe >= 9:
                 display.blit(pygame.transform.scale(img10, (350, 270)), (560, 100))
 
+            if geslo == "internet":
+                pygame.draw.line(display, black, (140, 190), (180, 190), 3)
+                pygame.draw.line(display, black, (190, 190), (230, 190), 3)
+                pygame.draw.line(display, black, (240, 190), (280, 190), 3)
+                pygame.draw.line(display, black, (290, 190), (330, 190), 3)
+                pygame.draw.line(display, black, (340, 190), (380, 190), 3)
+                pygame.draw.line(display, black, (390, 190), (430, 190), 3)
+                pygame.draw.line(display, black, (440, 190), (480, 190), 3)
+                pygame.draw.line(display, black, (490, 190), (530, 190), 3)
+                pygame.draw.line(display, black, (540, 190), (580, 190), 3)
+                pygame.draw.line(display, black, (590, 190), (630, 190), 3)
+
+                if narobe != 10:
+                    if i and n and t and e and r and n and e and t:
+                        bes_uporabljene.append("internet")
+                        while geslo in bes_uporabljene != "internet":
+                            geslo = random.choice(gesla)
+                        self.zmaga("internet")
+                    if i:
+                        display.blit(crka_i, (150, 150))
+                    if n:
+                        display.blit(crka_n, (200, 150))
+                    if t:
+                        display.blit(crka_t, (250, 150))
+                    if e:
+                        display.blit(crka_e, (300, 150))
+                    if r:
+                        display.blit(crka_r, (350, 150))
+                    if n:
+                        display.blit(crka_n, (400, 150))
+                    if e:
+                        display.blit(crka_e, (450, 150))
+                    if t:
+                        display.blit(crka_t, (500, 150))
+                    # ostale
+                    if a: display.blit(crka_a, (50, 300))
+                    if b: display.blit(crka_b, (80, 300))
+                    if c: display.blit(crka_c, (110, 300))
+                    if d: display.blit(crka_d, (140, 300))
+                    if f: display.blit(crka_f, (200, 300))
+                    if g: display.blit(crka_g, (230, 300))
+                    if h: display.blit(crka_h, (260, 300))
+                    if j: display.blit(crka_j, (310, 300))
+                    if k: display.blit(crka_k, (90, 350))
+                    if l: display.blit(crka_l, (115, 350))
+                    if m: display.blit(crka_m, (140, 350))
+                    if o: display.blit(crka_o, (200, 350))
+                    if p: display.blit(crka_p, (230, 350))
+                    if s: display.blit(crka_s, (275, 350))
+                    if s_: display.blit(crka_s_, (300, 350))
+                    if u: display.blit(crka_u, (140, 400))
+                    if v: display.blit(crka_v, (170, 400))
+                    if z: display.blit(crka_z, (200, 400))
+                    if z_: display.blit(crka_z_, (230, 400))
+
+                else:
+                    loop = False
+                    bes_uporabljene.append("wifi")
+                    while geslo in bes_uporabljene != "wifi":
+                        geslo = random.choice(gesla)
+                    self.restart()
+
+            if geslo == "miška":
+                pygame.draw.line(display, black, (140, 190), (180, 190), 3)
+                pygame.draw.line(display, black, (190, 190), (230, 190), 3)
+                pygame.draw.line(display, black, (240, 190), (280, 190), 3)
+                pygame.draw.line(display, black, (290, 190), (330, 190), 3)
+                pygame.draw.line(display, black, (340, 190), (380, 190), 3)
+
+                if narobe != 10:
+                    if m and i and s_ and k and a:
+                        bes_uporabljene.append("miška")
+                        while geslo in bes_uporabljene != "miška":
+                            geslo = random.choice(gesla)
+                        self.zmaga("miška")
+                    if m:
+                        display.blit(crka_m, (150, 150))
+                    if i:
+                        display.blit(crka_i, (200, 150))
+                    if s_:
+                        display.blit(crka_s_, (250, 150))
+                    if k:
+                        display.blit(crka_k, (300, 150))
+                    if a:
+                        display.blit(crka_a, (350, 150))
+                    # ostale
+                    if b: display.blit(crka_b, (80, 300))
+                    if c: display.blit(crka_c, (110, 300))
+                    if d: display.blit(crka_d, (140, 300))
+                    if e: display.blit(crka_e, (170, 300))
+                    if f: display.blit(crka_f, (200, 300))
+                    if g: display.blit(crka_g, (230, 300))
+                    if h: display.blit(crka_h, (260, 300))
+                    if j: display.blit(crka_j, (310, 300))
+                    if l: display.blit(crka_l, (115, 350))
+                    if n: display.blit(crka_n, (170, 350))
+                    if o: display.blit(crka_o, (200, 350))
+                    if p: display.blit(crka_p, (230, 350))
+                    if r: display.blit(crka_r, (250, 350))
+                    if s: display.blit(crka_s, (275, 350))
+                    if t: display.blit(crka_t, (110, 400))
+                    if u: display.blit(crka_u, (140, 400))
+                    if v: display.blit(crka_v, (170, 400))
+                    if z: display.blit(crka_z, (200, 400))
+                    if z_: display.blit(crka_z_, (230, 400))
+                else:
+                    loop = False
+                    bes_uporabljene.append("miška")
+                    while geslo in bes_uporabljene != "miška":
+                        geslo = random.choice(gesla)
+                    self.restart()
+
+            if geslo == "brskalnik":
+                pygame.draw.line(display, black, (140, 190), (180, 190), 3)
+                pygame.draw.line(display, black, (190, 190), (230, 190), 3)
+                pygame.draw.line(display, black, (240, 190), (280, 190), 3)
+                pygame.draw.line(display, black, (290, 190), (330, 190), 3)
+                pygame.draw.line(display, black, (340, 190), (380, 190), 3)
+                pygame.draw.line(display, black, (390, 190), (430, 190), 3)
+                pygame.draw.line(display, black, (440, 190), (480, 190), 3)
+                pygame.draw.line(display, black, (490, 190), (530, 190), 3)
+                pygame.draw.line(display, black, (540, 190), (580, 190), 3)
+
+                if narobe != 10:
+                    if b and r and s and k and a and l and n and i and k:
+                        bes_uporabljene.append("brskalnik")
+                        while geslo in bes_uporabljene != "brskalnik":
+                            geslo = random.choice(gesla)
+                        self.zmaga("brskalnik")
+                    if b:
+                        display.blit(crka_b, (150, 150))
+                    if r:
+                        display.blit(crka_r, (200, 150))
+                    if s:
+                        display.blit(crka_s, (250, 150))
+                    if k:
+                        display.blit(crka_k, (300, 150))
+                    if a:
+                        display.blit(crka_a, (350, 150))
+                    if l:
+                        display.blit(crka_l, (400, 150))
+                    if n:
+                        display.blit(crka_n, (450, 150))
+                    if i:
+                        display.blit(crka_i, (500, 150))
+                    if k:
+                        display.blit(crka_k, (550, 150))
+                    # ostale
+                    if c: display.blit(crka_c, (110, 300))
+                    if d: display.blit(crka_d, (140, 300))
+                    if e: display.blit(crka_e, (170, 300))
+                    if f: display.blit(crka_f, (200, 300))
+                    if g: display.blit(crka_g, (230, 300))
+                    if h: display.blit(crka_h, (260, 300))
+                    if j: display.blit(crka_j, (310, 300))
+                    if m: display.blit(crka_m, (140, 350))
+                    if o: display.blit(crka_o, (200, 350))
+                    if p: display.blit(crka_p, (230, 350))
+                    if s_: display.blit(crka_s_, (300, 350))
+                    if t: display.blit(crka_t, (110, 400))
+                    if u: display.blit(crka_u, (140, 400))
+                    if v: display.blit(crka_v, (170, 400))
+                    if z: display.blit(crka_z, (200, 400))
+                    if z_: display.blit(crka_z_, (230, 400))
+                else:
+                    loop = False
+                    bes_uporabljene.append("brskalnik")
+                    while geslo in bes_uporabljene != "brskalnik":
+                        geslo = random.choice(gesla)
+                    self.restart()
+
+            if geslo == "tipkovnica":
+                pygame.draw.line(display, black, (140, 190), (180, 190), 3)
+                pygame.draw.line(display, black, (190, 190), (230, 190), 3)
+                pygame.draw.line(display, black, (240, 190), (280, 190), 3)
+                pygame.draw.line(display, black, (290, 190), (330, 190), 3)
+                pygame.draw.line(display, black, (340, 190), (380, 190), 3)
+                pygame.draw.line(display, black, (390, 190), (430, 190), 3)
+                pygame.draw.line(display, black, (440, 190), (480, 190), 3)
+                pygame.draw.line(display, black, (490, 190), (530, 190), 3)
+                pygame.draw.line(display, black, (540, 190), (580, 190), 3)
+                pygame.draw.line(display, black, (590, 190), (630, 190), 3)
+
+                if narobe != 10:
+                    if t and i and p and k and o and v and n and i and c and a:
+                        bes_uporabljene.append("tipkovnica")
+                        while geslo in bes_uporabljene != "tipkovnica":
+                            geslo = random.choice(gesla)
+                        self.zmaga("tipkovnica")
+                    if t:
+                        display.blit(crka_t, (150, 150))
+                    if i:
+                        display.blit(crka_i, (200, 150))
+                    if p:
+                        display.blit(crka_p, (250, 150))
+                    if k:
+                        display.blit(crka_k, (300, 150))
+                    if o:
+                        display.blit(crka_o, (350, 150))
+                    if v:
+                        display.blit(crka_v, (400, 150))
+                    if n:
+                        display.blit(crka_n, (450, 150))
+                    if i:
+                        display.blit(crka_i, (500, 150))
+                    if c:
+                        display.blit(crka_c, (550, 150))
+                    if a:
+                        display.blit(crka_a, (600, 150))
+                    # ostale
+                    if b: display.blit(crka_b, (80, 300))
+                    if d: display.blit(crka_d, (140, 300))
+                    if e: display.blit(crka_e, (170, 300))
+                    if f: display.blit(crka_f, (200, 300))
+                    if g: display.blit(crka_g, (230, 300))
+                    if h: display.blit(crka_h, (260, 300))
+                    if j: display.blit(crka_j, (310, 300))
+                    if l: display.blit(crka_l, (115, 350))
+                    if m: display.blit(crka_m, (140, 350))
+                    if r: display.blit(crka_r, (250, 350))
+                    if s: display.blit(crka_s, (275, 350))
+                    if s_: display.blit(crka_s_, (300, 350))
+                    if u: display.blit(crka_u, (140, 400))
+                    if v: display.blit(crka_v, (170, 400))
+                    if z: display.blit(crka_z, (200, 400))
+                    if z_: display.blit(crka_z_, (230, 400))
+                else:
+                    loop = False
+                    bes_uporabljene.append("tipkovnica")
+                    while geslo in bes_uporabljene != "tipkovnica":
+                        geslo = random.choice(gesla)
+                    self.restart()
+
+            if geslo == "hdmi":
+                pygame.draw.line(display, black, (140, 190), (180, 190), 3)
+                pygame.draw.line(display, black, (190, 190), (230, 190), 3)
+                pygame.draw.line(display, black, (240, 190), (280, 190), 3)
+                pygame.draw.line(display, black, (290, 190), (330, 190), 3)
+                if narobe != 10:
+                    if h and d and m and i:
+                        bes_uporabljene.append("hdmi")
+                        while geslo in bes_uporabljene != "hdmi":
+                            geslo = random.choice(gesla)
+                        self.zmaga("hdmi")
+                    if h:
+                        display.blit(crka_h, (150, 150))
+                    if d:
+                        display.blit(crka_d, (200, 150))
+                    if m:
+                        display.blit(crka_m, (250, 150))
+                    if i:
+                        display.blit(crka_i, (300, 150))
+                    # ostale
+                    if a: display.blit(crka_a, (50, 300))
+                    if b: display.blit(crka_b, (80, 300))
+                    if c: display.blit(crka_c, (110, 300))
+                    if e: display.blit(crka_e, (170, 300))
+                    if f: display.blit(crka_f, (200, 300))
+                    if g: display.blit(crka_g, (230, 300))
+                    if j: display.blit(crka_j, (310, 300))
+                    if k: display.blit(crka_k, (90, 350))
+                    if l: display.blit(crka_l, (115, 350))
+                    if n: display.blit(crka_n, (170, 350))
+                    if o: display.blit(crka_o, (200, 350))
+                    if p: display.blit(crka_p, (230, 350))
+                    if r: display.blit(crka_r, (250, 350))
+                    if s: display.blit(crka_s, (275, 350))
+                    if s_: display.blit(crka_s_, (300, 350))
+                    if t: display.blit(crka_t, (110, 400))
+                    if u: display.blit(crka_u, (140, 400))
+                    if v: display.blit(crka_v, (170, 400))
+                    if z: display.blit(crka_z, (200, 400))
+                    if z_: display.blit(crka_z_, (230, 400))
+
+                else:
+                    loop = False
+                    bes_uporabljene.append("hdmi")
+                    while geslo in bes_uporabljene != "hdmi":
+                        geslo = random.choice(gesla)
+                    self.restart()
+
+            if geslo == "monitor":
+                pygame.draw.line(display, black, (140, 190), (180, 190), 3)
+                pygame.draw.line(display, black, (190, 190), (230, 190), 3)
+                pygame.draw.line(display, black, (240, 190), (280, 190), 3)
+                pygame.draw.line(display, black, (290, 190), (330, 190), 3)
+                pygame.draw.line(display, black, (340, 190), (380, 190), 3)
+                pygame.draw.line(display, black, (390, 190), (430, 190), 3)
+                pygame.draw.line(display, black, (440, 190), (480, 190), 3)
+                if narobe != 10:
+                    if m and o and n and i and t and o and r:
+                        bes_uporabljene.append("monitor")
+                        while geslo in bes_uporabljene != "monitor":
+                            geslo = random.choice(gesla)
+                        self.zmaga("monitor")
+                    if m:
+                        display.blit(crka_m, (150, 150))
+                    if o:
+                        display.blit(crka_o, (200, 150))
+                    if n:
+                        display.blit(crka_n, (250, 150))
+                    if i:
+                        display.blit(crka_i, (300, 150))
+                    if t:
+                        display.blit(crka_t, (350, 150))
+                    if o:
+                        display.blit(crka_o, (400, 150))
+                    if r:
+                        display.blit(crka_r, (450, 150))
+                    # ostale
+                    if a: display.blit(crka_a, (50, 300))
+                    if b: display.blit(crka_b, (80, 300))
+                    if c: display.blit(crka_c, (110, 300))
+                    if d: display.blit(crka_d, (140, 300))
+                    if e: display.blit(crka_e, (170, 300))
+                    if f: display.blit(crka_f, (200, 300))
+                    if g: display.blit(crka_g, (230, 300))
+                    if h: display.blit(crka_h, (260, 300))
+                    if j: display.blit(crka_j, (310, 300))
+                    if k: display.blit(crka_k, (90, 350))
+                    if l: display.blit(crka_l, (115, 350))
+                    if p: display.blit(crka_p, (230, 350))
+                    if s: display.blit(crka_s, (275, 350))
+                    if s_: display.blit(crka_s_, (300, 350))
+                    if u: display.blit(crka_u, (140, 400))
+                    if v: display.blit(crka_v, (170, 400))
+                    if z: display.blit(crka_z, (200, 400))
+                    if z_: display.blit(crka_z_, (230, 400))
+                else:
+                    loop = False
+                    bes_uporabljene.append("monitor")
+                    while geslo in bes_uporabljene != "monitor":
+                        geslo = random.choice(gesla)
+                    self.restart()
+
             if geslo == "strežnik":
                 pygame.draw.line(display, black, (140, 190), (180, 190), 3)
                 pygame.draw.line(display, black, (190, 190), (230, 190), 3)
@@ -261,17 +598,20 @@ class MainWINDOW:
                     if b: display.blit(crka_b, (80, 300))
                     if c: display.blit(crka_c, (110, 300))
                     if d: display.blit(crka_d, (140, 300))
+                    if e: display.blit(crka_e, (170, 300))
                     if f: display.blit(crka_f, (200, 300))
                     if g: display.blit(crka_g, (230, 300))
                     if h: display.blit(crka_h, (260, 300))
                     if j: display.blit(crka_j, (310, 300))
-                    if l: display.blit(crka_l, (110, 350))
+                    if l: display.blit(crka_l, (115, 350))
                     if m: display.blit(crka_m, (140, 350))
                     if o: display.blit(crka_o, (200, 350))
                     if p: display.blit(crka_p, (230, 350))
-                    if s_: display.blit(crka_s_, (110, 400))
-                    if u: display.blit(crka_u, (170, 400))
-                    if v: display.blit(crka_v, (200, 400))
+                    if s_: display.blit(crka_s_, (300, 350))
+                    if t: display.blit(crka_t, (110, 400))
+                    if u: display.blit(crka_u, (140, 400))
+                    if v: display.blit(crka_v, (170, 400))
+                    if z: display.blit(crka_z, (200, 400))
                 else:
                     loop = False
                     bes_uporabljene.append("strežnik")
@@ -309,64 +649,23 @@ class MainWINDOW:
                     if h: display.blit(crka_h, (260, 300))
                     if i: display.blit(crka_i, (290, 300))
                     if j: display.blit(crka_j, (310, 300))
-                    if k: display.blit(crka_k, (80, 350))
-                    if l: display.blit(crka_l, (110, 350))
+                    if k: display.blit(crka_k, (90, 350))
+                    if l: display.blit(crka_l, (115, 350))
                     if n: display.blit(crka_n, (170, 350))
                     if p: display.blit(crka_p, (230, 350))
-                    if r: display.blit(crka_r, (260, 350))
-                    if s: display.blit(crka_s, (290, 350))
-                    if s_: display.blit(crka_s_, (110, 400))
-                    if t: display.blit(crka_t, (140, 400))
-                    if u: display.blit(crka_u, (170, 400))
-                    if v: display.blit(crka_v, (200, 400))
-                    if z: display.blit(crka_z, (230, 400))
-                    if z_: display.blit(crka_z_, (260, 400))
+                    if r: display.blit(crka_r, (250, 350))
+                    if s: display.blit(crka_s, (275, 350))
+                    if s_: display.blit(crka_s_, (300, 350))
+                    if t: display.blit(crka_t, (110, 400))
+                    if u: display.blit(crka_u, (140, 400))
+                    if v: display.blit(crka_v, (170, 400))
+                    if z: display.blit(crka_z, (200, 400))
+                    if z_: display.blit(crka_z_, (230, 400))
+
                 else:
                     loop = False
                     bes_uporabljene.append("modem")
                     while geslo in bes_uporabljene != "modem":
-                        geslo = random.choice(gesla)
-                    self.restart()
-
-            if geslo == "cpu":
-                pygame.draw.line(display, black, (140, 190), (180, 190), 3)
-                pygame.draw.line(display, black, (190, 190), (230, 190), 3)
-                pygame.draw.line(display, black, (240, 190), (280, 190), 3)
-
-                if narobe != 10:
-                    if c and p and u:
-                        bes_uporabljene.append("cpu")
-                        while geslo in bes_uporabljene != "cpu":
-                            geslo = random.choice(gesla)
-                        self.zmaga("cpu")
-                    if c:
-                        display.blit(crka_c, (150, 150))
-                    if p:
-                        display.blit(crka_p, (200, 150))
-                    if u:
-                        display.blit(crka_u, (250, 150))
-
-                    # ostale
-                    if o: display.blit(crka_o, (50, 300))
-                    if b: display.blit(crka_b, (80, 300))
-                    if d: display.blit(crka_d, (110, 300))
-                    if f: display.blit(crka_f, (200, 300))
-                    if g: display.blit(crka_g, (230, 300))
-                    if h: display.blit(crka_h, (260, 300))
-                    if j: display.blit(crka_j, (310, 300))
-                    if e: display.blit(crka_e, (80, 350))
-                    if r: display.blit(crka_r, (230, 350))
-                    if m: display.blit(crka_m, (260, 350))
-                    if s: display.blit(crka_s, (290, 350))
-                    if s_: display.blit(crka_s_, (110, 400))
-                    if t: display.blit(crka_t, (140, 400))
-                    if v: display.blit(crka_v, (200, 400))
-                    if z: display.blit(crka_z, (230, 400))
-                    if z_: display.blit(crka_z_, (260, 400))
-                else:
-                    loop = False
-                    bes_uporabljene.append("cpu")
-                    while geslo in bes_uporabljene != "cpu":
                         geslo = random.choice(gesla)
                     self.restart()
 
@@ -410,28 +709,30 @@ class MainWINDOW:
                         display.blit(crka_k, (600, 150))
 
                     # ostale
-                    if o: display.blit(crka_o, (50, 300))
                     if b: display.blit(crka_b, (80, 300))
-                    if d: display.blit(crka_d, (110, 300))
+                    if c: display.blit(crka_c, (110, 300))
+                    if d: display.blit(crka_d, (140, 300))
+                    if e: display.blit(crka_e, (170, 300))
                     if f: display.blit(crka_f, (200, 300))
                     if g: display.blit(crka_g, (230, 300))
                     if h: display.blit(crka_h, (260, 300))
                     if j: display.blit(crka_j, (310, 300))
-                    if e: display.blit(crka_e, (80, 350))
+                    if m: display.blit(crka_m, (140, 350))
+                    if o: display.blit(crka_o, (200, 350))
                     if p: display.blit(crka_p, (230, 350))
-                    if m: display.blit(crka_m, (260, 350))
-                    if s: display.blit(crka_s, (290, 350))
-                    if s_: display.blit(crka_s_, (110, 400))
-                    if t: display.blit(crka_t, (140, 400))
-                    if v: display.blit(crka_v, (200, 400))
-                    if z: display.blit(crka_z, (230, 400))
-                    if z_: display.blit(crka_z_, (260, 400))
+                    if s: display.blit(crka_s, (275, 350))
+                    if s_: display.blit(crka_s_, (300, 350))
+                    if t: display.blit(crka_t, (110, 400))
+                    if v: display.blit(crka_v, (170, 400))
+                    if z: display.blit(crka_z, (200, 400))
+                    if z_: display.blit(crka_z_, (230, 400))
                 else:
                     loop = False
                     bes_uporabljene.append("računalnik")
                     while geslo in bes_uporabljene != "računalnik":
                         geslo = random.choice(gesla)
                     self.restart()
+
 
             pygame.display.update()
 

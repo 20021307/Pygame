@@ -60,7 +60,7 @@ naslov = font3.render("Vislice", True, black)
 gesla = ["računalnik", "modem", "internet", "strežnik",
          "monitor", "hdmi", "tipkovnica", "miška", "brskalnik"]
 
-geslo = random.choice(gesla)
+geslo = "miška"#random.choice(gesla)
 bes_uporabljene = []
 runda = []
 
@@ -116,7 +116,91 @@ class MainWINDOW:
                         self.restart()
 
             display.blit(zmaga, (350, 50))
-            while geslo in bes_uporabljene != "slemi":
+
+            if geslo == "računalnik":
+                display.blit(crka_r, (150, 150))
+                display.blit(crka_a, (200, 150))
+                display.blit(crka_c_, (250, 150))
+                display.blit(crka_u, (300, 150))
+                display.blit(crka_n, (350, 150))
+                display.blit(crka_a, (400, 150))
+                display.blit(crka_l, (450, 150))
+                display.blit(crka_n, (500, 150))
+                display.blit(crka_i, (550, 150))
+                display.blit(crka_k, (600, 150))
+
+            if geslo == "modem":
+                display.blit(crka_m, (150, 150))
+                display.blit(crka_m, (350, 150))
+                display.blit(crka_o, (200, 150))
+                display.blit(crka_d, (250, 150))
+                display.blit(crka_e, (300, 150))
+
+            if geslo == "strežnik":
+                display.blit(crka_s, (150, 150))
+                display.blit(crka_t, (200, 150))
+                display.blit(crka_r, (250, 150))
+                display.blit(crka_e, (300, 150))
+                display.blit(crka_z_, (350, 150))
+                display.blit(crka_n, (400, 150))
+                display.blit(crka_i, (450, 150))
+                display.blit(crka_k, (500, 150))
+
+            if geslo == "internet":
+                display.blit(crka_i, (150, 150))
+                display.blit(crka_n, (200, 150))
+                display.blit(crka_t, (250, 150))
+                display.blit(crka_e, (300, 150))
+                display.blit(crka_r, (350, 150))
+                display.blit(crka_n, (400, 150))
+                display.blit(crka_e, (450, 150))
+                display.blit(crka_t, (500, 150))
+
+            if geslo == "monitor":
+                display.blit(crka_m, (150, 150))
+                display.blit(crka_o, (200, 150))
+                display.blit(crka_n, (250, 150))
+                display.blit(crka_i, (300, 150))
+                display.blit(crka_t, (350, 150))
+                display.blit(crka_o, (400, 150))
+                display.blit(crka_r, (450, 150))
+
+            if geslo == "hdmi":
+                display.blit(crka_h, (150, 150))
+                display.blit(crka_d, (200, 150))
+                display.blit(crka_m, (250, 150))
+                display.blit(crka_i, (300, 150))
+            if geslo == "tipkovnica":
+                display.blit(crka_t, (150, 150))
+                display.blit(crka_i, (200, 150))
+                display.blit(crka_p, (250, 150))
+                display.blit(crka_k, (300, 150))
+                display.blit(crka_o, (350, 150))
+                display.blit(crka_v, (400, 150))
+                display.blit(crka_n, (450, 150))
+                display.blit(crka_i, (500, 150))
+                display.blit(crka_c, (550, 150))
+                display.blit(crka_a, (600, 150))
+                
+            if geslo == "brskalnik":
+                display.blit(crka_b, (150, 150))
+                display.blit(crka_r, (200, 150))
+                display.blit(crka_s, (250, 150))
+                display.blit(crka_k, (300, 150))
+                display.blit(crka_a, (350, 150))
+                display.blit(crka_l, (400, 150))
+                display.blit(crka_n, (450, 150))
+                display.blit(crka_i, (500, 150))
+                display.blit(crka_k, (550, 150))
+
+            if geslo == "miška":
+                display.blit(crka_m, (150, 150))
+                display.blit(crka_i, (200, 150))
+                display.blit(crka_s_, (250, 150))
+                display.blit(crka_k, (300, 150))
+                display.blit(crka_a, (350, 150))
+
+            while geslo in bes_uporabljene != geslo:
                 geslo = random.choice(gesla)
 
             if len(runda) < 2:
@@ -130,10 +214,11 @@ class MainWINDOW:
         self.main()
 
     def koncaj(self):
-        url = 'index.html'
+        url = "index.html"
         webbrowser.get('windows-default').open(url, 2)
         pygame.quit()
         quit()
+
 
     def main(self):
         global geslo, bes_uporabljene
@@ -416,26 +501,7 @@ class MainWINDOW:
                         while geslo in bes_uporabljene != "tipkovnica":
                             geslo = random.choice(gesla)
                         self.zmaga("tipkovnica")
-                    if t:
-                        display.blit(crka_t, (150, 150))
-                    if i:
-                        display.blit(crka_i, (200, 150))
-                    if p:
-                        display.blit(crka_p, (250, 150))
-                    if k:
-                        display.blit(crka_k, (300, 150))
-                    if o:
-                        display.blit(crka_o, (350, 150))
-                    if v:
-                        display.blit(crka_v, (400, 150))
-                    if n:
-                        display.blit(crka_n, (450, 150))
-                    if i:
-                        display.blit(crka_i, (500, 150))
-                    if c:
-                        display.blit(crka_c, (550, 150))
-                    if a:
-                        display.blit(crka_a, (600, 150))
+
                     # ostale
                     if b: display.blit(crka_b, (80, 300))
                     if d: display.blit(crka_d, (140, 300))
@@ -450,7 +516,6 @@ class MainWINDOW:
                     if s: display.blit(crka_s, (275, 350))
                     if s_: display.blit(crka_s_, (300, 350))
                     if u: display.blit(crka_u, (140, 400))
-                    if v: display.blit(crka_v, (170, 400))
                     if z: display.blit(crka_z, (200, 400))
                     if z_: display.blit(crka_z_, (230, 400))
                 else:

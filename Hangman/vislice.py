@@ -1,4 +1,5 @@
 import os
+
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
 import random
@@ -22,7 +23,6 @@ gold = (255, 176, 31)
 green_bright = (0, 255, 0)
 WIDTH = 1000
 HEIGHT = 480
-
 
 pygame.display.set_caption("Vislice")
 display = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -60,7 +60,7 @@ naslov = font3.render("Vislice", True, black)
 gesla = ["računalnik", "modem", "internet", "strežnik",
          "monitor", "hdmi", "tipkovnica", "miška", "brskalnik"]
 
-geslo = "miška"#random.choice(gesla)
+geslo = random.choice(gesla)
 bes_uporabljene = []
 runda = []
 
@@ -92,7 +92,6 @@ class MainWINDOW:
         click = pygame.mouse.get_pressed()
         if x + w > mouse[0] > x and y + h > mouse[1] > y:
             pygame.draw.rect(display, ac, (x, y, w, h))
-
             if click[0] == 1 and action != None:
                 action()
         else:
@@ -117,89 +116,6 @@ class MainWINDOW:
 
             display.blit(zmaga, (350, 50))
 
-            if geslo == "računalnik":
-                display.blit(crka_r, (150, 150))
-                display.blit(crka_a, (200, 150))
-                display.blit(crka_c_, (250, 150))
-                display.blit(crka_u, (300, 150))
-                display.blit(crka_n, (350, 150))
-                display.blit(crka_a, (400, 150))
-                display.blit(crka_l, (450, 150))
-                display.blit(crka_n, (500, 150))
-                display.blit(crka_i, (550, 150))
-                display.blit(crka_k, (600, 150))
-
-            if geslo == "modem":
-                display.blit(crka_m, (150, 150))
-                display.blit(crka_m, (350, 150))
-                display.blit(crka_o, (200, 150))
-                display.blit(crka_d, (250, 150))
-                display.blit(crka_e, (300, 150))
-
-            if geslo == "strežnik":
-                display.blit(crka_s, (150, 150))
-                display.blit(crka_t, (200, 150))
-                display.blit(crka_r, (250, 150))
-                display.blit(crka_e, (300, 150))
-                display.blit(crka_z_, (350, 150))
-                display.blit(crka_n, (400, 150))
-                display.blit(crka_i, (450, 150))
-                display.blit(crka_k, (500, 150))
-
-            if geslo == "internet":
-                display.blit(crka_i, (150, 150))
-                display.blit(crka_n, (200, 150))
-                display.blit(crka_t, (250, 150))
-                display.blit(crka_e, (300, 150))
-                display.blit(crka_r, (350, 150))
-                display.blit(crka_n, (400, 150))
-                display.blit(crka_e, (450, 150))
-                display.blit(crka_t, (500, 150))
-
-            if geslo == "monitor":
-                display.blit(crka_m, (150, 150))
-                display.blit(crka_o, (200, 150))
-                display.blit(crka_n, (250, 150))
-                display.blit(crka_i, (300, 150))
-                display.blit(crka_t, (350, 150))
-                display.blit(crka_o, (400, 150))
-                display.blit(crka_r, (450, 150))
-
-            if geslo == "hdmi":
-                display.blit(crka_h, (150, 150))
-                display.blit(crka_d, (200, 150))
-                display.blit(crka_m, (250, 150))
-                display.blit(crka_i, (300, 150))
-            if geslo == "tipkovnica":
-                display.blit(crka_t, (150, 150))
-                display.blit(crka_i, (200, 150))
-                display.blit(crka_p, (250, 150))
-                display.blit(crka_k, (300, 150))
-                display.blit(crka_o, (350, 150))
-                display.blit(crka_v, (400, 150))
-                display.blit(crka_n, (450, 150))
-                display.blit(crka_i, (500, 150))
-                display.blit(crka_c, (550, 150))
-                display.blit(crka_a, (600, 150))
-                
-            if geslo == "brskalnik":
-                display.blit(crka_b, (150, 150))
-                display.blit(crka_r, (200, 150))
-                display.blit(crka_s, (250, 150))
-                display.blit(crka_k, (300, 150))
-                display.blit(crka_a, (350, 150))
-                display.blit(crka_l, (400, 150))
-                display.blit(crka_n, (450, 150))
-                display.blit(crka_i, (500, 150))
-                display.blit(crka_k, (550, 150))
-
-            if geslo == "miška":
-                display.blit(crka_m, (150, 150))
-                display.blit(crka_i, (200, 150))
-                display.blit(crka_s_, (250, 150))
-                display.blit(crka_k, (300, 150))
-                display.blit(crka_a, (350, 150))
-
             while geslo in bes_uporabljene != geslo:
                 geslo = random.choice(gesla)
 
@@ -219,7 +135,6 @@ class MainWINDOW:
         pygame.quit()
         quit()
 
-
     def main(self):
         global geslo, bes_uporabljene
         loop = True
@@ -229,7 +144,7 @@ class MainWINDOW:
         while loop:
             if len(bes_uporabljene) >= 4:
                 bes_uporabljene = []
-            preostalo = font1.render("Preostalih napačnih poizkusov: " + str(poizkusi-narobe), True, red)
+            preostalo = font1.render("Preostalih napačnih poizkusov: " + str(poizkusi - narobe), True, red)
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:
                     if 96 < event.key < 123 and event.key != 113 and event.key != 119 and event.key != 121 and event.key != 120 or event.key == 92 or event.key == 91 or event.key == 59:
@@ -289,7 +204,7 @@ class MainWINDOW:
             display.fill(white)
             display.blit(uporabljene, (25, 250))
             display.blit(preostalo, (10, 50))
-            display.blit(naslov, (self.w-65, self.h-30))
+            display.blit(naslov, (self.w - 65, self.h - 30))
 
             if narobe >= 0:
                 display.blit(pygame.transform.scale(img1, (350, 270)), (650, 100))
@@ -326,6 +241,14 @@ class MainWINDOW:
 
                 if narobe != 10:
                     if i and n and t and e and r and n and e and t:
+                        display.blit(crka_i, (150, 150))
+                        display.blit(crka_n, (200, 150))
+                        display.blit(crka_t, (250, 150))
+                        display.blit(crka_e, (300, 150))
+                        display.blit(crka_r, (350, 150))
+                        display.blit(crka_n, (400, 150))
+                        display.blit(crka_e, (450, 150))
+                        display.blit(crka_t, (500, 150))
                         bes_uporabljene.append("internet")
                         while geslo in bes_uporabljene != "internet":
                             geslo = random.choice(gesla)
@@ -369,8 +292,8 @@ class MainWINDOW:
 
                 else:
                     loop = False
-                    bes_uporabljene.append("wifi")
-                    while geslo in bes_uporabljene != "wifi":
+                    bes_uporabljene.append("internet")
+                    while geslo in bes_uporabljene != "internet":
                         geslo = random.choice(gesla)
                     self.restart()
 
@@ -383,6 +306,11 @@ class MainWINDOW:
 
                 if narobe != 10:
                     if m and i and s_ and k and a:
+                        display.blit(crka_m, (150, 150))
+                        display.blit(crka_i, (200, 150))
+                        display.blit(crka_s_, (250, 150))
+                        display.blit(crka_k, (300, 150))
+                        display.blit(crka_a, (350, 150))
                         bes_uporabljene.append("miška")
                         while geslo in bes_uporabljene != "miška":
                             geslo = random.choice(gesla)
@@ -438,6 +366,15 @@ class MainWINDOW:
                 if narobe != 10:
                     if b and r and s and k and a and l and n and i and k:
                         bes_uporabljene.append("brskalnik")
+                        display.blit(crka_b, (150, 150))
+                        display.blit(crka_r, (200, 150))
+                        display.blit(crka_s, (250, 150))
+                        display.blit(crka_k, (300, 150))
+                        display.blit(crka_a, (350, 150))
+                        display.blit(crka_l, (400, 150))
+                        display.blit(crka_n, (450, 150))
+                        display.blit(crka_i, (500, 150))
+                        display.blit(crka_k, (550, 150))
                         while geslo in bes_uporabljene != "brskalnik":
                             geslo = random.choice(gesla)
                         self.zmaga("brskalnik")
@@ -497,11 +434,40 @@ class MainWINDOW:
 
                 if narobe != 10:
                     if t and i and p and k and o and v and n and i and c and a:
+                        display.blit(crka_t, (150, 150))
+                        display.blit(crka_i, (200, 150))
+                        display.blit(crka_p, (250, 150))
+                        display.blit(crka_k, (300, 150))
+                        display.blit(crka_o, (350, 150))
+                        display.blit(crka_v, (400, 150))
+                        display.blit(crka_n, (450, 150))
+                        display.blit(crka_i, (500, 150))
+                        display.blit(crka_c, (550, 150))
+                        display.blit(crka_a, (600, 150))
                         bes_uporabljene.append("tipkovnica")
                         while geslo in bes_uporabljene != "tipkovnica":
                             geslo = random.choice(gesla)
                         self.zmaga("tipkovnica")
-
+                    if t:
+                        display.blit(crka_t, (150, 150))
+                    if i:
+                        display.blit(crka_i, (200, 150))
+                    if p:
+                        display.blit(crka_p, (250, 150))
+                    if k:
+                        display.blit(crka_k, (300, 150))
+                    if o:
+                        display.blit(crka_o, (350, 150))
+                    if v:
+                        display.blit(crka_v, (400, 150))
+                    if n:
+                        display.blit(crka_n, (450, 150))
+                    if i:
+                        display.blit(crka_i, (500, 150))
+                    if c:
+                        display.blit(crka_c, (550, 150))
+                    if a:
+                        display.blit(crka_a, (600, 150))
                     # ostale
                     if b: display.blit(crka_b, (80, 300))
                     if d: display.blit(crka_d, (140, 300))
@@ -532,6 +498,10 @@ class MainWINDOW:
                 pygame.draw.line(display, black, (290, 190), (330, 190), 3)
                 if narobe != 10:
                     if h and d and m and i:
+                        display.blit(crka_h, (150, 150))
+                        display.blit(crka_d, (200, 150))
+                        display.blit(crka_m, (250, 150))
+                        display.blit(crka_i, (300, 150))
                         bes_uporabljene.append("hdmi")
                         while geslo in bes_uporabljene != "hdmi":
                             geslo = random.choice(gesla)
@@ -583,6 +553,13 @@ class MainWINDOW:
                 pygame.draw.line(display, black, (440, 190), (480, 190), 3)
                 if narobe != 10:
                     if m and o and n and i and t and o and r:
+                        display.blit(crka_m, (150, 150))
+                        display.blit(crka_o, (200, 150))
+                        display.blit(crka_n, (250, 150))
+                        display.blit(crka_i, (300, 150))
+                        display.blit(crka_t, (350, 150))
+                        display.blit(crka_o, (400, 150))
+                        display.blit(crka_r, (450, 150))
                         bes_uporabljene.append("monitor")
                         while geslo in bes_uporabljene != "monitor":
                             geslo = random.choice(gesla)
@@ -638,6 +615,14 @@ class MainWINDOW:
                 pygame.draw.line(display, black, (490, 190), (530, 190), 3)
                 if narobe != 10:
                     if s and t and r and e and z_ and n and i and k:
+                        display.blit(crka_s, (150, 150))
+                        display.blit(crka_t, (200, 150))
+                        display.blit(crka_r, (250, 150))
+                        display.blit(crka_e, (300, 150))
+                        display.blit(crka_z_, (350, 150))
+                        display.blit(crka_n, (400, 150))
+                        display.blit(crka_i, (450, 150))
+                        display.blit(crka_k, (500, 150))
                         bes_uporabljene.append("strežnik")
                         while geslo in bes_uporabljene != "strežnik":
                             geslo = random.choice(gesla)
@@ -692,6 +677,11 @@ class MainWINDOW:
                 pygame.draw.line(display, black, (340, 190), (380, 190), 3)
                 if narobe != 10:
                     if m and o and d and e and m:
+                        display.blit(crka_m, (150, 150))
+                        display.blit(crka_m, (350, 150))
+                        display.blit(crka_o, (200, 150))
+                        display.blit(crka_d, (250, 150))
+                        display.blit(crka_e, (300, 150))
                         bes_uporabljene.append("modem")
                         while geslo in bes_uporabljene != "modem":
                             geslo = random.choice(gesla)
@@ -748,6 +738,16 @@ class MainWINDOW:
 
                 if narobe != 10:
                     if r and a and c_ and u and n and a and l and n and i and k:
+                        display.blit(crka_r, (150, 150))
+                        display.blit(crka_a, (200, 150))
+                        display.blit(crka_c_, (250, 150))
+                        display.blit(crka_u, (300, 150))
+                        display.blit(crka_n, (350, 150))
+                        display.blit(crka_a, (400, 150))
+                        display.blit(crka_l, (450, 150))
+                        display.blit(crka_n, (500, 150))
+                        display.blit(crka_i, (550, 150))
+                        display.blit(crka_k, (600, 150))
                         bes_uporabljene.append("računalnik")
                         while geslo in bes_uporabljene != "računalnik":
                             geslo = random.choice(gesla)
@@ -797,7 +797,6 @@ class MainWINDOW:
                     while geslo in bes_uporabljene != "računalnik":
                         geslo = random.choice(gesla)
                     self.restart()
-
 
             pygame.display.update()
 

@@ -6,7 +6,6 @@ Repository of my games made in pygame.
 2. Download the folder of the game you want and run the main.py file.
 3. If you get a "missing error", make sure all the files are in the same folder as you downloaded the game.
 
-## Images
 
 
 
